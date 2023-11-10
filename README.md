@@ -1,5 +1,6 @@
 # Ex-01-Simple-Web-Server
 ## Date:10.11.23
+## Name:N Kannan
 
 ## AIM:
 To develop a simple webserver to serve html pages.
@@ -21,6 +22,8 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
+
+``````
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 content = ""
@@ -35,12 +38,9 @@ content = ""
 <h2>3.React</h2>
 </body>
 </html>
-
-
 """
-
-class HelloHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
+ class HelloHandler(BaseHTTPRequestHandler):
+ def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'text/html; charset=utf-8')
         self.end_headers()
@@ -49,6 +49,7 @@ class HelloHandler(BaseHTTPRequestHandler):
 server_address = ('', 80)
 httpd = HTTPServer(server_address, HelloHandler)
 httpd.serve_forever()
+``````
 
 
 ## OUTPUT:
